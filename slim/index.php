@@ -1212,13 +1212,13 @@ $app -> get("/propiedades", function (Request $request, Response $response){
     try{
         $conn = getConnection();  //obtiene la conexion de la base de datos
         $sql = "SELECT * FROM propiedades WHERE 1=1";
-	  if (!empty($data(['localidad'])
+	  if (!empty($data(['localidad'])))
 	  	$sql .= "AND localidad_id=". $data['localidad_id'];
-	  if (!empty($data(['localidad'])
+	  if (!empty($data(['localidad'])))
 	  	$sql .= "AND disponible=". $data['disponible'];
-	  if (!empty($data(['localidad'])
+	  if (!empty($data(['localidad'])))
 	  	$sql .= "AND fecha_inicio_disponibilidad=". $data['fecha_inicio_disponibilidad'];
-	  if (!empty($data(['localidad'])
+	  if (!empty($data(['localidad'])))
 	  	$sql .= "AND cantidad_huespedes=". $data['cantidad_huespedes'];
 	  $consulta = $conn->prepare ($sql);
 	  $consulta->execute ();
